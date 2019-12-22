@@ -28,12 +28,12 @@ namespace jda.Operations
             return null;
         }
 
-        public void SaveImageList(Dictionary<string, byte[]> resourceList)
+        public void SaveImageList(Dictionary<string, byte[]> resourceList, string path)
         {
             if (resourceList != null && resourceList.Any()) {
                 foreach (var resource in resourceList)
                 {
-                    SaveFile(resource.Value, "D:\\jdaImages", resource.Key);
+                    SaveFile(resource.Value, path, resource.Key);
                 }
             }
         }
