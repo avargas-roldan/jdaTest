@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace jda.Operations
 {
-    class ImageOperations : IImageOperations
+    public class ImageOperations : IImageOperations
     {
         private readonly HttpClient _httpClient;
         public ImageOperations(HttpClient httpClient) {
@@ -32,16 +32,27 @@ namespace jda.Operations
                 if (_httpClient != null) {
                     Dictionary<string, byte[]> images = new Dictionary<string, byte[]>();
                     foreach (string imageUrl in fullImagePathList) {
-                        string fileName = await GetFileNameAsync(imageUrl);
-                        if (!images.ContainsKey(fileName)) {
-                            var resource = await _httpClient.GetByteArrayAsync(imageUrl);
-                            if (!string.IsNullOrEmpty(fileName) && resource != null && resource.Length > 0) images.Add(fileName, resource);
+                        if (IsValidURLPath(imageUrl)) {
+                            string fileName = await GetFileNameAsync(imageUrl);
+                            if (!images.ContainsKey(fileName)) {
+                                var resource = await _httpClient.GetByteArrayAsync(imageUrl);
+                                if (!string.IsNullOrEmpty(fileName) && resource != null && resource.Length > 0) images.Add(fileName, resource);
+                            }
                         }
                     }
                     if (images.Any()) return images;
                 }
             }
             return null;
+        }
+
+        public bool IsValidURLPath(string uriImagePath)
+        {
+            if (!string.IsNullOrEmpty(uriImagePath)) {
+                return Uri.TryCreate(uriImagePath, UriKind.Absolute, out Uri uriResult) && 
+                       (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+            }
+            return false;
         }
     }
 }
