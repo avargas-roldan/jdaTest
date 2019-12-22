@@ -48,7 +48,7 @@ namespace jda.tests
         }
 
         [TestMethod, TestCategory("jda.tests.fileaccess.filereading")]
-        public void Should_Get_Image_URL_List_From_Text_File(string filePath)
+        public void Should_Get_Image_URL_List_From_Text_File()
         {
             var fileContent = _fileAccess.GetImageURIsAsync(_fullImageTextFilePath).Result;
             Assert.IsTrue(fileContent != null && fileContent.Any());
