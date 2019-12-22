@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jda", "jda\jda.csproj", "{C2C4BAB1-5DAA-4119-9B97-25FBA251DEC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jda.tests", "jda.tests\jda.tests.csproj", "{9B505878-F2D7-4111-B409-89F99E17B034}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,10 +17,10 @@ Global
 		{C2C4BAB1-5DAA-4119-9B97-25FBA251DEC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2C4BAB1-5DAA-4119-9B97-25FBA251DEC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2C4BAB1-5DAA-4119-9B97-25FBA251DEC7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6CA19EA2-388F-4ABD-977E-A303948120D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6CA19EA2-388F-4ABD-977E-A303948120D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6CA19EA2-388F-4ABD-977E-A303948120D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6CA19EA2-388F-4ABD-977E-A303948120D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B505878-F2D7-4111-B409-89F99E17B034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B505878-F2D7-4111-B409-89F99E17B034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B505878-F2D7-4111-B409-89F99E17B034}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B505878-F2D7-4111-B409-89F99E17B034}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
