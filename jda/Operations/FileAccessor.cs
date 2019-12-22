@@ -31,6 +31,7 @@ namespace jda.Operations
         public void SaveImageList(Dictionary<string, byte[]> resourceList, string path)
         {
             if (resourceList != null && resourceList.Any()) {
+                CheckOrCreateDirectory(path);
                 foreach (var resource in resourceList)
                 {
                     SaveFile(resource.Value, path, resource.Key);
